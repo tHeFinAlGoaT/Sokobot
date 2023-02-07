@@ -10,15 +10,13 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 
 @bot.event
-
 async def on_ready():
     print("Bot is ready!")
     print(f"Name: {bot.user.name}")
     print(f"ID: {bot.user.id}")
 
+ 
 @bot.command()
-
-
 async def sokobot(ctx):
 
     # Define the board and channel
@@ -45,8 +43,6 @@ async def sokobot(ctx):
     # Place the star, player (flushed), and x emoji
     star_x, star_y = random_position()
     board[star_x][star_y] = "⭐️"
-
-
 
     flushed_x, flushed_y = random_position()
     board[flushed_x][flushed_y] = ":flushed:"
@@ -79,7 +75,6 @@ async def sokobot(ctx):
 #moving function (on reaction add)
 @bot.event
 async def on_reaction_add(reaction, user):
-
 
     global board, star_x, star_y, flushed_x, flushed_y, x_x, x_y
 
